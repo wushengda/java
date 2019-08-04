@@ -1,0 +1,14 @@
+#build
+#/quickstart/cust/build
+#/quickstart/order/build
+#/quickstart/order/*
+#/quickstart/order/*.iml
+
+out
+build
+.settings
+.project
+.classpath
+.idea
+.gradle
+*.iml
