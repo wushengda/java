@@ -5,10 +5,13 @@
 #/quickstart/order/*.iml
 
 out
+
 build
+bin
 .settings
 .project
 .classpath
 .idea
 .gradle
-*.iml
+.iml
+.class
