@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="www.asiainfo.com">
+
+<xs:element name="asiainfo">
+ <xs:complexType>
+ 
+  <xs:sequence>
+   <xs:element name="namespace" type="xs:string"/>
+   
+   <xs:element name="person-info">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="address" type="xs:string"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="country" type="xs:string"/>
+     </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="job">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="language" type="xs:string"/>
+      <xs:element name="work-year" type="xs:positiveInteger"/>
+      <xs:element name="payment" type="xs:decimal"/>
+     </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+   
+   <xs:element maxOccurs="unbounded" name="love">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="introduce" type="xs:string"/>
+     </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+   
+  </xs:sequence>
+  
+  <xs:attribute name="nickName" type="xs:string" use="required"/>
+  
+ </xs:complexType>
+</xs:element>
+
+</xs:schema>
