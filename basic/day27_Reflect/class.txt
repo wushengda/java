@@ -1,2 +1,0 @@
-className=cn.itcast.test.Worker
-methodName=love
