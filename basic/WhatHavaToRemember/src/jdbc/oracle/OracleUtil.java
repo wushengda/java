@@ -14,7 +14,7 @@ public class OracleUtil {
 	}
 	
 	static Connection getConnection() throws Exception{
-		return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:wusd", "wusd", "wusd");
+		return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:dbName", "username", "password");
 	}
 	
 	public static void main(String[] args) throws Exception {
