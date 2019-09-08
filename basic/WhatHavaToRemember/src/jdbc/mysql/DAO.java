@@ -20,14 +20,14 @@ public class DAO
 	//	}
 	//}
 	
-	static Connection getConnection()throws Exception
+	private static Connection getConnection()throws Exception
 	{
-		return DriverManager.getConnection("jdbc:mysql://192.168.23.130:3306/mysql", "root", "315787");
+		return DriverManager.getConnection("jdbc:mysql://192.168.23.130:3306/base", "base", "base");
 	}
 	
 	public static void main(String[] args) throws Exception {
 
-		List list = getList("SELECT * FROM `plugin`;");
+		List list = getList("SELECT * FROM BS_STATIC_DATA;");
 		for (Object o : list)
 		{
 			Map rs = (Map) o;
@@ -54,11 +54,12 @@ public class DAO
 
 			while (rs.next())
 			{
-				Map<String,String> row = new HashMap<String, String>();
+				Map<String, String> row = new HashMap<String, String>();
 				for (int i = 1; i <= columnCount; i++)
 				{
 					row.put(md.getColumnName(i), rs.getString(i));
 				}
+				
 				list.add(row);
 			}
 		}
