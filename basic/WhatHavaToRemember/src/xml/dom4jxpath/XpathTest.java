@@ -14,7 +14,7 @@ public class XpathTest {
 		//1.得到SAXReader解析器
 		SAXReader reader = new SAXReader();
 		//2.指定去解析哪个文件
-		Document document = reader.read("src/xml/dom4jxpath/test.xml");
+		Document document = reader.read("src/xml/dom4jxpath/clazz.xml");
 		//3.得到根元素
 		Element root = document.getRootElement();
 		//4.可以使用xpath随心读取

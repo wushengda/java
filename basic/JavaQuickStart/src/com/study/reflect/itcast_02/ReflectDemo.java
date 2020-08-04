@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
 public class ReflectDemo {
 	public static void main(String[] args) throws Exception {
 		// 获取字节码文件对象
-		Class c = Class.forName("cn.itcast_01.Person");
+		Class c = Class.forName("cn.sellticket.Person");
 
 		// 获取构造方法
 		// public Constructor[] getConstructors():所有公共构造方法

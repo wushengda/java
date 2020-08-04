@@ -12,7 +12,7 @@ import java.lang.reflect.Constructor;
 public class ReflectDemo2 {
 	public static void main(String[] args) throws Exception {
 		// 获取字节码文件对象
-		Class c = Class.forName("cn.itcast_01.Person");
+		Class c = Class.forName("cn.sellticket.Person");
 
 		// 获取带参构造方法对象
 		// public Constructor<T> getConstructor(Class<?>... parameterTypes)

@@ -20,14 +20,14 @@ public class StudentDemo {
 		System.out.println(s.hashCode());
 		System.out.println(s.getClass().getName());
 		System.out.println("--------------------");
-		System.out.println(s.toString());// cn.itcast_02.Student@42552c
+		System.out.println(s.toString());// cn.dielock.Student@42552c
 		System.out.println("--------------------");
 		// toString()方法的值等价于它
 		// getClass().getName() + '@' + Integer.toHexString(hashCode())
 		// this.getClass().getName()+'@'+Integer.toHexString(this.hashCode())
 
-		// cn.itcast_02.Student@42552c
-		// cn.itcast_02.Student@42552c
+		// cn.dielock.Student@42552c
+		// cn.dielock.Student@42552c
 
 		System.out.println(s.getClass().getName() + '@'
 				+ Integer.toHexString(s.hashCode()));

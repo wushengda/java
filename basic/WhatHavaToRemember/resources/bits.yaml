@@ -1,0 +1,206 @@
+filter.sessionVerify:
+  name: sessionVerify
+  servletNames: handler,attach,impexp,order
+  #urlPatterns: /examples/*,/data/*,/order,/handler,/attach,/impexp
+  order: 5
+  enabled: true
+
+#.sql config
+rse:
+  enable: false
+  joinTransaction: true
+
+project.css: pak
+
+touchframe.debug: true
+touchframe.pc.login:
+  title: "客户关系管理系统CRM"
+  logoTitle: "客户关系管理系统CRM"
+  usernameField: STAFF_ID
+  usernameValue: 315787187
+  passwordField: PASSWORD
+  passwordValue: 123456
+  #loginAction: com.wade.order.view.devframe.action.impl.LoginAction
+  loginAction: com.asiainfo.base.web.component.login.Login
+  locales:
+    zh_CN: "中文(中华人民共和国)"
+    en_US: "English(United States)"
+  widgets:
+    logo:
+      enabled: true
+    form:
+      enabled: true
+
+touchframe.pc.main:
+  title: "客户关系管理系统CRM"
+  useridField: STAFF_ID
+  usernameField: STAFF_NAME
+  userdeptField: DEPART_NAME
+  widgets:
+    person:
+      template: "com/asiainfo/base/web/component/login/PersonLogin.html"
+      enabled: true
+    group:
+      template: "com/asiainfo/base/web/component/login/EnterpriseLogin.html"
+      enabled: true
+    favorite:
+      enabled: true
+    reminder:
+      enabled: true
+    tool:
+      enabled: true
+
+touchframe.pc.home:
+  widgets:
+    banner:
+      enabled: true
+    tab-home:
+      enabled: false
+    tab-fullmenu:
+      enabled: true
+
+# 菜单配置 START
+touchframe.menu:
+    groups: [
+        {
+            name: "开发样例",
+            subgroups: [
+                {
+                    name: "业务样例",
+                    items: [
+                        {name: "接口测试", url: "?service=page/base.page.common.util.InterfaceTest"},
+                        {name: "补换卡", url: "?service=page/order.page.person.changesimcard.ChangeSimCard&listener=onInitBusi"},
+                        {name: "销户", url: "?service=page/order.page.person.destroyuser.DestroyUser&listener=onInitBusi"},
+                        {name: "受理撤单", url: "?service=page/order.page.person.canceltrade.CancelTrade&listener=onInitBusi"},
+                        {name: "营业强制撤单", url: "?service=page/order.page.person.canceltrade.CancelTrade&listener=onInitBusi&isForce=true"},
+                        {name: "分页查询", url: "?service=page/order.page.person.orderqry.OrderQryNew"},
+                        {name: "有价卡销售", url: "?service=page/res.page.paycard.SalePayCard&listener=init"},
+                        {name: "预占号码释放", url: "?service=page/res.page.number.preOccupyNumRelease&listener=init"}
+                     ]
+                },
+                {
+                    name: "基本功能",
+                    items: [
+                        {name: "文件上传", url: "?service=page/order.page.demo.basic.Upload"},
+                        {name: "导入导出", url: "?service=page/order.page.demo.basic.ImpExp"},
+                        {name: "参数配置查询", url: "?service=page/base.page.common.staticParamForm"}
+                    ]
+                }
+            ]
+        },
+        {
+            name: "开发工具",
+            subgroups: [
+                {
+                    name: "测试工具",
+                    items: [
+                      {name: "接口测试", url: "?service=page/base.page.common.util.InterfaceTest"},
+                    ]
+                }
+            ]
+        },
+        {
+            name: "个人业务",
+            subgroups: [
+                {
+                    name: "常用业务",
+                    items: [
+                        {name: "补换卡", url: "?service=page/order.page.person.changesimcard.ChangeSimCard&listener=onInitBusi"},
+                        {name: "销户", url: "?service=page/order.page.person.destroyuser.DestroyUser&listener=onInitBusi"},
+                        {name: "修改密码", url: "?service=page/order.page.person.changepassword.ChangePassWord"},
+                        {name: "订单查询", url: "?service=page/order.page.person.orderqry.OrderQry"},
+                        {name: "分合户", url: "?service=page/order.page.person.changepayrelation.ChangeAcctDefault&listener=onInitBusi"},
+                        {name: "账户关系变更", url: "?service=page/order.page.person.changepayrelation.ChangePayRelaAdv&listener=onInitBusi"},
+                        {name: "套餐变更", url: "?service=page/order.page.person.changemainoffer.ChangeMainOffer&listener=onInitBusi"},
+                        {name: "商品订购", url: "?service=page/order.page.person.commodityorder.CommodityOrder&listener=onInitBusi"},
+                        {name: "资费变更", url: "?service=page/order.page.person.offerchange.OfferChange&listener=onInitBusi"},
+                        {name: "预销恢复", url: "?service=page/order.page.person.prerestoresubscriber.PreRestoreSubscriber&listener=onInitBusi"},
+                        {name: "统一查询退订", url: "?service=page/order.page.person.serviceinfoforcust.ServiceInfoForCust&listener=onInitBusi"},
+                        {name: "过户", url: "?service=page/order.page.person.changecustowner.ChangeCustOwner&listener=onInitBusi&JUDEGE_OWE_FEE=Y"},
+                        {name: "受理撤单", url: "?service=page/order.page.person.canceltrade.CancelTrade&listener=onInitBusi"},
+                        {name: "营业强制撤单", url: "?service=page/order.page.person.canceltrade.ForceCancelTrade&listener=onInitBusi&isForce=true"},
+                        {name: "购物车", url: "?service=page/order.page.person.cartmanage.CartManager&listener=onInitBusi"},
+                        {name: "订单支付", url: "?service=page/order.page.person.orderpaymoney.OrderPaymoney&listener=initPage"},
+                        {name: "国内一卡多号业务受理", url: "?service=page/order.page.person.onecardmultinum.OneCardMultiNumBusi&listener=onInitBusi"},
+                        {name: "免填单查询", url: "?service=page/order.page.person.busiinvoiceprint.BusiInvoicePrint&listener=onInitBusi"}
+                    ]
+                },
+                {
+                    name: "开销户",
+                    items: [
+                        {name: "普通GSM开户", url: "?service=page/order.page.person.subscriberopen.Subscriberopen&listener=initPage&OPEN_TYPE=0&ACCESS_FROM=CRM"},
+                        {name: "预销恢复", url: "?service=page/order.page.person.prerestoresubscriber.PreRestoreSubscriber&listener=onInitBusi"},
+                        {name: "销户重入网", url: "?service=page/order.page.person.restoresubscriber.RestoreSubscriber&listener=onInitBusi&LOGIN_TYPE_CODE=&MENU_ID=5"},
+                    ]
+                },
+                {
+                    name: "功能停开",
+                    items: [
+                        {name: "个人停机", url: "?service=page/order.page.person.changeprodstatus.IndivStop&listener=onInitBusi&OPERATOR_TYPE=1"},
+                        {name: "个人开机", url: "?service=page/order.page.person.changeprodstatus.IndivStop&listener=onInitBusi&OPERATOR_TYPE=2"}
+                    ]
+                },
+                {
+                    name: "宽带业务",
+                    items: [
+                        {name: "宽带预约", url: "?service=page/order.page.person.broadband.BroadbandReserve&listener=init"},
+                        {name: "宽带预约管理", url: "?service=page/order.page.person.broadband.BroadbandReserveManage&listener=init"},
+                        {name: "GSM宽带办理", url: "?service=page/order.page.person.broadband.broadbandhandle.BroadBandHandle&listener=onInitBusi"},
+                        {name: "宽带查询", url: "?service=page/order.page.person.broadband.QueryBroadBand"},
+                        {name: "宽带移机", url: "?service=page/order.page.person.broadband.broadbandmove.BroadbandMove&listener=onInitBusi"},
+                        {name: "宽带复机", url: "?service=page/order.page.person.broadband.BroadbandRecover&listener=onInitBusi"},
+                        {name: "宽带有效期修改", url: "?service=page/order.page.person.broadband.broadbandexpchange.BroadbandExpChange&listener=onInitBusi"},
+                        {name: "宽带销户", url: "?service=page/order.page.person.broadband.broadbanddestroy.BroadbandDestroy&listener=onInitBusi"},
+                        {name: "宽带开户", url: "?service=page/order.page.person.broadband.broadbandopen.BroadbandOpen&listener=onInitBusi"},
+                        {name: "宽带退订", url: "?service=page/order.page.person.broadband.broadbandcancel.BroadbandCancel&listener=onInitBusi"},
+                        {name: "宽带小区覆盖情况", url: "?service=page/order.page.person.broadband.qrybroadcellcoverage.QryBroadCellCoverage&listener=onInitBusi"}
+                    ]
+                },
+                {
+                  name: "群组业务",
+                  items: [
+                  {name: "家庭新装", url: "?service=page/order.page.person.family.FamilyNew&listener=onInitBusi"},
+                  {name: "家庭网成员新增", url: "?service=page/order.page.person.family.FamilyMemberAdd&listener=onInitBusi"},
+                  {name: "家庭网销户", url: "?service=page/order.page.person.family.FamilyRemove&listener=onInitBusi"},
+                  {name: "流量共享新装", url: "?service=page/order.page.person.shareSpromAccept.shareSpromAcceptNew&listener=onInitBusi"},
+                  {name: "流量共享套餐成员维护", url: "?service=page/order.page.person.shareSpromAccept.shareSpromAcceptMod&listener=onInitBusi"},
+                  {name: "共享流量拆网", url: "?service=page/order.page.person.shareSprom.ShareSpromAcceptCancel&listener=onInitBusi"}
+                  ]
+                }
+            ]
+        },
+        {
+          name: "集团业务",
+          subgroups: [
+          {
+            name: "集团业务",
+            items: [
+            {name: "集团业务受理", url: "?service=page/order.page.enterprise.opergroupuser.OperGroupUser&listener=initPage"},
+            {name: "集团成员业务", url: "?service=page/order.page.enterprise.opergroupmember.OperGroupMember&listener=initPage"},
+            {name: "集团专线管理", url: "?service=page/order.page.enterprise.eomsManage.EomsManage&listener=initPage"},
+            {name: "任务管理", url: "?service=page/order.page.enterprise.taskManager.TaskManage&listener=initPage"}
+            ]
+          }
+          ]
+        }
+    ]
+# 菜单配置 END
+
+## 开发模式下服务加载的配置
+# develop-service-loader:
+#  ext-packages: ["com.asiainfo.order"]
+
+## 示例配置，KEY里不能带"."号，否则解析报错
+order:
+  demo:
+    simplequery:
+      name: "SUPERUSR"
+      code: "SUPERUSR"
+      age: 10
+      items: [
+        {name: 'name1', value: 1},
+        {name: 'name2', value: 2},
+        {name: 'name3', value: 3}
+      ]
+
+

@@ -15,7 +15,7 @@ import java.util.Date;
 public class FileDemo {
 	public static void main(String[] args) {
 		// 创建文件对象
-		File file = new File("demo\\test.txt");
+		File file = new File("demo\\clazz.txt");
 
 		System.out.println("getAbsolutePath:" + file.getAbsolutePath());
 		System.out.println("getPath:" + file.getPath());

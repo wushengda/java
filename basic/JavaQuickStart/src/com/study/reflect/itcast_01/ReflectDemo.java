@@ -43,7 +43,7 @@ public class ReflectDemo {
 
 		// ·½Ê½3
 		// ClassNotFoundException
-		Class c4 = Class.forName("cn.itcast_01.Person");
+		Class c4 = Class.forName("cn.sellticket.Person");
 		System.out.println(c == c4);
 	}
 }

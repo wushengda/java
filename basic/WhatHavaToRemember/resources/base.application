@@ -1,0 +1,22 @@
+<!-- 接口测试页面 -->
+<page name="base.page.common.util.InterfaceTest" specification-path="/base/page/common/util/InterfaceTest.page" version="1212"/><!-- 接口测试 -->
+
+<!-- 订单提交成功页面 -->
+<page name="submitSuc.page" specification-path="../../com/asiainfo/base/web/component/sucpage/SubmitSuc.page" version="1213"/>
+
+<!-- 参数配置查询 -->
+<page name="base.page.common.staticParamForm" specification-path="/base/page/common/staticParamForm/staticParamForm.page" version="1212"/>
+
+<!-- 组织组件 -->
+<page name="base.page.common.OrgTree" specification-path="/base/page/common/component/OrgTree.page" version="1212"/>
+
+<!-- 组织组件 -->
+<page name="base.page.common.OpQry" specification-path="/base/page/common/component/OpQry.page" version="1212"/>
+
+<!-- 地市组件 -->
+<page name="base.page.common.BsCountySel" specification-path="/base/page/common/component/BsCountySel.page" version="1212"/>
+
+<!-- 县市组件 -->
+<page name="base.page.common.BsDistrictSel" specification-path="/base/page/common/component/BsDistrictSel.page" version="1212"/>
+
+

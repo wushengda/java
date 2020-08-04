@@ -3,10 +3,10 @@ package com.study.jdknew.itcast_01;
 public class DirectionDemo {
 	public static void main(String[] args) {
 		Direction d = Direction.FRONT;
-		System.out.println(d); // cn.itcast_01.Direction@175078b
+		System.out.println(d); // cn.sellticket.Direction@175078b
 		System.out.println("------------------------------------");
 		Direction2 d2 = Direction2.FRONT;
-		System.out.println(d2);// cn.itcast_01.Direction2@11563ff
+		System.out.println(d2);// cn.sellticket.Direction2@11563ff
 		System.out.println(d2.getName());
 		d2 = Direction2.RIGHT;
 		System.out.println(d2);

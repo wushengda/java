@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 public class ReflectDemo {
 	public static void main(String[] args) throws Exception {
 		// 获取字节码文件对象
-		Class c = Class.forName("cn.itcast_01.Person");
+		Class c = Class.forName("cn.sellticket.Person");
 
 		// 获取所有的方法
 		// Method[] methods = c.getMethods(); // 获取自己的包括父亲的公共方法

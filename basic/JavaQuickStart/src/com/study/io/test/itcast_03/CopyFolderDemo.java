@@ -11,7 +11,7 @@ import java.io.IOException;
  * 需求：复制单极文件夹
  * 
  * 数据源：e:\\demo
- * 目的地：e:\\test
+ * 目的地：e:\\clazz
  * 
  * 分析：
  * 		A:封装目录
@@ -24,7 +24,7 @@ public class CopyFolderDemo {
 		// 封装目录
 		File srcFolder = new File("e:\\demo");
 		// 封装目的地
-		File destFolder = new File("e:\\test");
+		File destFolder = new File("e:\\clazz");
 		// 如果目的地文件夹不存在，就创建
 		if (!destFolder.exists()) {
 			destFolder.mkdir();
@@ -37,9 +37,9 @@ public class CopyFolderDemo {
 		for (File file : fileArray) {
 			// System.out.println(file);
 			// 数据源：e:\\demo\\e.mp3
-			// 目的地：e:\\test\\e.mp3
+			// 目的地：e:\\clazz\\e.mp3
 			String name = file.getName(); // e.mp3
-			File newFile = new File(destFolder, name); // e:\\test\\e.mp3
+			File newFile = new File(destFolder, name); // e:\\clazz\\e.mp3
 
 			copyFile(file, newFile);
 		}

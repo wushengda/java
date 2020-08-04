@@ -15,7 +15,7 @@ public class SystemProperties
 		
 		System.setProperty("org.apache.tapestry.disable-caching", "true");
 
-		System.out.println(System.getProperty("user.name"));
+		System.out.println(System.getProperty("user.baseName"));
 
 		System.out.println(System.getProperty("org.apache.tapestry.disable-caching"));
 

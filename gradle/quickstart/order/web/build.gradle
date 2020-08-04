@@ -1,6 +1,0 @@
-dependencies
-{
-    compile project(':app')
-    compile project(':pub')
-    compile project(':base-pub')
-}

@@ -82,7 +82,7 @@ public class SellTicket implements Runnable {
 		}
 	}
 
-//	private void sellTicket() {
+//	private void sellticket() {
 //		synchronized (d) {
 //			if (tickets > 0) {
 //			try {
@@ -97,7 +97,7 @@ public class SellTicket implements Runnable {
 //	}
 	
 	//如果一个方法一进去就看到了代码被同步了，那么我就再想能不能把这个同步加在方法上呢?
-//	 private synchronized void sellTicket() {
+//	 private synchronized void sellticket() {
 //			if (tickets > 0) {
 //			try {
 //					Thread.sleep(100);

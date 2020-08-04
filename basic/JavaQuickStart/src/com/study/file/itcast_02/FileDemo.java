@@ -15,7 +15,13 @@ import java.io.IOException;
 public class FileDemo {
 	public static void main(String[] args) throws IOException {
 		// 需求：我要在e盘目录下创建一个文件夹demo
-		File file = new File("e:\\demo");
+		File file = new File("e:\\demo\\aaa");
+		boolean exists = file.exists();
+		if(!exists)
+		{
+		    file.mkdirs();
+		}
+
 		System.out.println("mkdir:" + file.mkdir());
 
 		// 需求:我要在e盘目录demo下创建一个文件a.txt
@@ -25,15 +31,15 @@ public class FileDemo {
 		// 需求：我要在e盘目录test下创建一个文件b.txt
 		// Exception in thread "main" java.io.IOException: 系统找不到指定的路径。
 		// 注意：要想在某个目录下创建内容，该目录首先必须存在。
-		// File file3 = new File("e:\\test\\b.txt");
+		// File file3 = new File("e:\\clazz\\b.txt");
 		// System.out.println("createNewFile:" + file3.createNewFile());
 
 		// 需求:我要在e盘目录test下创建aaa目录
-		// File file4 = new File("e:\\test\\aaa");
+		// File file4 = new File("e:\\clazz\\aaa");
 		// System.out.println("mkdir:" + file4.mkdir());
 
-		// File file5 = new File("e:\\test");
-		// File file6 = new File("e:\\test\\aaa");
+		// File file5 = new File("e:\\clazz");
+		// File file6 = new File("e:\\clazz\\aaa");
 		// System.out.println("mkdir:" + file5.mkdir());
 		// System.out.println("mkdir:" + file6.mkdir());
 

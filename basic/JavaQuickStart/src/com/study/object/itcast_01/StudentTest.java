@@ -26,7 +26,7 @@ public class StudentTest {
 		Student s = new Student();
 		Class c = s.getClass();
 		String str = c.getName();
-		System.out.println(str); // cn.itcast_01.Student
+		System.out.println(str); // cn.sellticket.Student
 		
 		//Á´Ê½±à³Ì
 		String str2  = s.getClass().getName();

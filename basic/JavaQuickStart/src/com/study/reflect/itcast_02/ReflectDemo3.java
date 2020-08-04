@@ -12,7 +12,7 @@ import java.lang.reflect.Constructor;
 public class ReflectDemo3 {
 	public static void main(String[] args) throws Exception {
 		// 获取字节码文件对象
-		Class c = Class.forName("cn.itcast_01.Person");
+		Class c = Class.forName("cn.sellticket.Person");
 
 		// 获取私有构造方法对象
 		// NoSuchMethodException：每个这个方法异常
