@@ -1,0 +1,8 @@
+group = rootProject.group
+version = rootProject.version
+
+dependencies{
+    compile project(":bits-quickstart-pub")
+    compile project(":bits-quickstart-app")
+}
+

@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.asiainfo.bits'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies{
+
+    compile project(":bits-quickstart-pub")
+    compile project(":bits-quickstart-app")
+
+}

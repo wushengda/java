@@ -1,0 +1,15 @@
+rootProject.name = "bits-quickstart"
+
+include(":${rootProject.name}-exe")
+project(":${rootProject.name}-exe").projectDir = "${rootDir}/exe" as File
+include(":${rootProject.name}-pub")
+project(":${rootProject.name}-pub").projectDir = "${rootDir}/pub" as File
+include(":${rootProject.name}-app")
+project(":${rootProject.name}-app").projectDir = "${rootDir}/app" as File
+include(":${rootProject.name}-web")
+project(":${rootProject.name}-web").projectDir = "${rootDir}/web" as File
+include(":${rootProject.name}-soa")
+project(":${rootProject.name}-soa").projectDir = "${rootDir}/soa" as File
+include(":${rootProject.name}-rule")
+project(":${rootProject.name}-rule").projectDir = "${rootDir}/rule" as File
+

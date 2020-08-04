@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+
+<msg>
+
+    <default-group>group1</default-group>
+
+    <group name="group1">
+        <type>comet</type>
+        <access>10.13.3.19:8000</access>
+        <cluster>
+            <address>10.13.3.19:8000</address>
+        </cluster>
+    </group>
+
+</msg>

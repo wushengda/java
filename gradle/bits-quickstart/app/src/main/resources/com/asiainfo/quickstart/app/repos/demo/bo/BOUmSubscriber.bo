@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+ <sysbo datasource="CRM1" name="BOUmSubscriber" mainattr="SUBSCRIBER_INS_ID">
+  <mapingenty type="table">{UM_SUBSCRIBER}</mapingenty>
+  <datafilter />
+  <attrlist>
+   <attr floatlength="0" name="SUBSCRIBER_INS_ID" maxlength="16" datatype="Long" type="PK" remark="用户实例标识">
+    <mapingcol datatype="NUMBER">SUBSCRIBER_INS_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="CUST_ID" maxlength="16" datatype="Long" type="COL" remark="客户标识">
+    <mapingcol datatype="NUMBER">CUST_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PROD_INS_ID" maxlength="16" datatype="Long" type="COL" remark="产品实例标识">
+    <mapingcol datatype="NUMBER">PROD_INS_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PROD_LINE_ID" maxlength="16" datatype="Long" type="COL" remark="产品线标识">
+    <mapingcol datatype="NUMBER">PROD_LINE_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PROD_LINE_NAME" maxlength="128" datatype="String" type="COL" remark="产品线名称">
+    <mapingcol datatype="VARCHAR2">PROD_LINE_NAME</mapingcol>
+   </attr>
+   <attr floatlength="0" name="SUBSCRIBER_TYPE" maxlength="6" datatype="String" type="COL" remark="用户类别
+1--GSM用户
+4--IPBUS使用用户
+8--集团用户
+18--WLAN用户
+19--宽带用户
+22--个人群组用户
+25--固话用户
+35--物联网用户
+36--农村CPE用户">
+    <mapingcol datatype="VARCHAR2">SUBSCRIBER_TYPE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="SUBSCRIBER_LEVEL" maxlength="8" datatype="String" type="COL" remark="用户星级
+49--未评级（经分系统）
+50--零星级
+51--一星级
+52--二星级
+53--三星级
+54--四星级
+55--五星级
+56--五星金
+57--五星钻
+60--未评级（营业系统）">
+    <mapingcol datatype="VARCHAR2">SUBSCRIBER_LEVEL</mapingcol>
+   </attr>
+   <attr floatlength="0" name="IS_USIM" maxlength="1" datatype="String" type="COL" remark="是否4GSIM卡用户
+0--否
+1--是">
+    <mapingcol datatype="VARCHAR2">IS_USIM</mapingcol>
+   </attr>
+   <attr floatlength="0" name="ACCESS_NUM" maxlength="40" datatype="String" type="COL" remark="接入号">
+    <mapingcol datatype="VARCHAR2">ACCESS_NUM</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PASSWORD_TYPE" maxlength="2" datatype="Integer" type="COL" remark="密码类型">
+    <mapingcol datatype="NUMBER">PASSWORD_TYPE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PASSWORD" maxlength="100" datatype="String" type="COL" remark="密码">
+    <mapingcol datatype="VARCHAR2">PASSWORD</mapingcol>
+   </attr>
+   <attr floatlength="0" name="SUB_BILL_ID" maxlength="50" datatype="String" type="COL" remark="次计费标识">
+    <mapingcol datatype="VARCHAR2">SUB_BILL_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="ACCT_TAG" maxlength="8" datatype="String" type="COL" remark="出帐标志
+0--正常处理
+1--定时激活
+2--待激活用户
+Z--不出帐">
+    <mapingcol datatype="VARCHAR2">ACCT_TAG</mapingcol>
+   </attr>
+   <attr floatlength="0" name="MPUTE_TAG" maxlength="8" datatype="String" type="COL" remark="固定费用重算标志
+0--不重算
+1--重算
+2--从月初开始重算">
+    <mapingcol datatype="VARCHAR2">MPUTE_TAG</mapingcol>
+   </attr>
+   <attr floatlength="" name="FIRST_ACTIVE_DATE" maxlength="" datatype="DateTime" type="COL" remark="首次激活时间">
+    <mapingcol datatype="DATE">FIRST_ACTIVE_DATE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="REMOVE_REASON" maxlength="200" datatype="String" type="COL" remark="注销原因">
+    <mapingcol datatype="VARCHAR2">REMOVE_REASON</mapingcol>
+   </attr>
+   <attr floatlength="" name="PRE_DESTORY_DATE" maxlength="" datatype="DateTime" type="COL" remark="预销时间">
+    <mapingcol datatype="DATE">PRE_DESTORY_DATE</mapingcol>
+   </attr>
+   <attr floatlength="" name="DESTORY_DATE" maxlength="" datatype="DateTime" type="COL" remark="销户时间">
+    <mapingcol datatype="DATE">DESTORY_DATE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="OPEN_MODE" maxlength="8" datatype="String" type="COL" remark="开户方式
+0--正常
+1--预开未返单
+2--预开已返单
+3--过户新增
+4--当日返单并过户">
+    <mapingcol datatype="VARCHAR2">OPEN_MODE</mapingcol>
+   </attr>
+   <attr floatlength="" name="OPEN_DATE" maxlength="" datatype="DateTime" type="COL" remark="开户时间">
+    <mapingcol datatype="DATE">OPEN_DATE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="SUBSCRIBER_STATUS" maxlength="8" datatype="String" type="COL" remark="用户状态
+0--历史
+1--正常
+2--营业预销
+3--帐务预销
+4--营业销户
+5--帐务销户
+6--管理预销
+7--管理销户
+8--实名制销户
+10--待激活">
+    <mapingcol datatype="VARCHAR2">SUBSCRIBER_STATUS</mapingcol>
+   </attr>
+   <attr floatlength="0" name="AREA_CODE" maxlength="40" datatype="String" type="COL" remark="区号">
+    <mapingcol datatype="VARCHAR2">AREA_CODE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PROMPT_TYPE" maxlength="2" datatype="String" type="COL" remark="催缴方式
+1--免催缴
+2--语音催缴
+3--短信催缴
+4--语音 短信催缴
+5--邮寄催缴
+6--上门服务">
+    <mapingcol datatype="VARCHAR2">PROMPT_TYPE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PROMPT_NBR" maxlength="32" datatype="String" type="COL" remark="催缴号码">
+    <mapingcol datatype="VARCHAR2">PROMPT_NBR</mapingcol>
+   </attr>
+   <attr floatlength="0" name="PROMPT_LAG" maxlength="2" datatype="String" type="COL" remark="催缴语言
+0--无
+1--地方语言
+2--普通话
+3--英语
+4--日语">
+    <mapingcol datatype="VARCHAR2">PROMPT_LAG</mapingcol>
+   </attr>
+   <attr floatlength="0" name="REMARKS" maxlength="4000" datatype="String" type="COL" remark="备注">
+    <mapingcol datatype="VARCHAR2">REMARKS</mapingcol>
+   </attr>
+   <attr floatlength="0" name="DATA_STATUS" maxlength="8" datatype="String" type="COL" remark="数据状态
+0--无效
+1--有效">
+    <mapingcol datatype="VARCHAR2">DATA_STATUS</mapingcol>
+   </attr>
+   <attr floatlength="0" name="DONE_CODE" maxlength="22" datatype="Long" type="COL" remark="事务编号">
+    <mapingcol datatype="NUMBER">DONE_CODE</mapingcol>
+   </attr>
+   <attr floatlength="" name="CREATE_DATE" maxlength="" datatype="DateTime" type="COL" remark="创建日期">
+    <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="CREATE_OP_ID" maxlength="12" datatype="String" type="COL" remark="创建操作员编码">
+    <mapingcol datatype="VARCHAR2">CREATE_OP_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="CREATE_ORG_ID" maxlength="12" datatype="String" type="COL" remark="创建组织编码">
+    <mapingcol datatype="VARCHAR2">CREATE_ORG_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="CREATE_DISTRICT" maxlength="6" datatype="String" type="COL" remark="创建操作员归属地区
+开户时：需要填写该字段，填写操作员地区。
+数据割接：已经携号跨区的用户需要根据号码的号段填写用户号码归属地区
+携号跨区时：只修改用户管理地区和县市，不修改CREATE_DISTRICT .">
+    <mapingcol datatype="VARCHAR2">CREATE_DISTRICT</mapingcol>
+   </attr>
+   <attr floatlength="" name="DONE_DATE" maxlength="" datatype="DateTime" type="COL" remark="操作日期">
+    <mapingcol datatype="DATE">DONE_DATE</mapingcol>
+   </attr>
+   <attr floatlength="0" name="OP_ID" maxlength="12" datatype="String" type="COL" remark="操作员编码">
+    <mapingcol datatype="VARCHAR2">OP_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="ORG_ID" maxlength="12" datatype="String" type="COL" remark="操作组织编码">
+    <mapingcol datatype="VARCHAR2">ORG_ID</mapingcol>
+   </attr>
+   <attr floatlength="0" name="MGMT_DISTRICT" maxlength="6" datatype="String" type="COL" remark="管理地区">
+    <mapingcol datatype="VARCHAR2">MGMT_DISTRICT</mapingcol>
+   </attr>
+   <attr floatlength="0" name="MGMT_COUNTY" maxlength="6" datatype="String" type="COL" remark="管理县市">
+    <mapingcol datatype="VARCHAR2">MGMT_COUNTY</mapingcol>
+   </attr>
+   <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL" remark="数据归属地区">
+    <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+   </attr>
+    </attrlist>
+  </sysbo>
+</sysbolist>

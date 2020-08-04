@@ -1,0 +1,14 @@
+[
+    {
+        "input": {},
+        "output": {
+            "OUTDATA": {
+                "SHORT_NAME": "MM",
+                "DATA_STATUS": "1",
+                "PARTY_TYPE": "1000",
+                "PARTY_NAME": "毛慕萌Mock测试",
+                "PARTY_ID": "89101110240145"
+            }
+        }
+    }
+]

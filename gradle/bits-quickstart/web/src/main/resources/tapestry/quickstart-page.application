@@ -1,0 +1,4 @@
+<page name="quickstart.page.demo.business.query.SimpleQuery" specification-path="/quickstart/page/demo/business/query/SimpleQuery.page" version="1212"/>
+<page name="quickstart.page.demo.business.accept.SimpleAccept" specification-path="/quickstart/page/demo/business/accept/SimpleAccept.page" version="1212"/>
+<page name="quickstart.page.demo.basic.Upload" specification-path="/quickstart/page/demo/basic/Upload.page" version="1212"/>
+<page name="quickstart.page.demo.basic.ImpExp" specification-path="/quickstart/page/demo/basic/ImpExp.page" version="1212"/>

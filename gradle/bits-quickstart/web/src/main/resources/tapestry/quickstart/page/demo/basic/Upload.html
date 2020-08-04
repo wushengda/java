@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head jwcid="@Head">
+    <title>Upload</title>
+    <script type="text/javascript">
+        //<!--
+        //$.PLUGIN_SWFUPLAOD_ENABLE = false;
+        //-->
+    </script>
+</head>
+<body jwcid="@Body">
+
+<div class="l_edit">
+
+    <!-- 主流程 开始 -->
+    <div class="l_editMain">
+        <div class="c_title">
+            <div class="text">在 list 中使用</div>
+        </div>
+        <!-- 标题 结束 -->
+        <!-- 表单 开始 -->
+        <div class="c_list c_list-form">
+            <ul>
+                <li>
+                    <div class="label">单个文件</div>
+                    <div class="value">
+                        <!--
+                            单文件上传 SimpleUpload组件
+                            ftpCode : FTP_SITE 配置 相关表参数库  ucr_param.wd_gateway_ftp
+                            fileTypes : 允许上传的文件类型，多个文件类型用","号分隔
+                            fileSize : 允许上传的文件大小，单位byte, 默认值为30M
+                            fileDelete : true | false, 清空时是否删除服务器端文件，默认为true
+                        -->
+                        <span name="simpleupload" jwcid="@SimpleUpload" ftpCode="order" filePath="attach" fileTypes=".txt;.doc;.docx;.jpg;.png" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- 表单 结束 -->
+        <div class="c_space"></div>
+        <!-- 表单 开始 -->
+        <div class="c_list c_list-form">
+            <ul>
+                <li class="link" ontap="showPopup('uploadPopup');loadFile();">
+                    <div class="label">多个文件</div>
+                    <div class="value">
+                        <span id="upfileText" ></span>
+                        <input id="upfileValue" name="upfileValue" type="hidden" value="" />
+                    </div>
+                    <div class="more"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- 表单 结束 -->
+
+
+        <div class="c_space"></div>
+        <div class="c_submit c_submit-full">
+            <button class="e_button-l e_button-r e_button-navy" type="button" ontap="$('#fileupload').attr('readonly', true);">重置</button>
+            <button class="e_button-l e_button-r e_button-green" type="button" ontap="$('#simpleupload').attr('readonly', true);">提交</button>
+        </div>
+        <div class="c_space"></div>
+
+    </div>
+    <!-- 主流程 结束 -->
+
+    <!-- 占位符 开始 -->
+    <div class="l_editPlace"><span class="e_ico-cmlogo"></span></div>
+    <!-- 占位符 结束 -->
+
+</div>
+
+
+<!-- 弹窗 开始 -->
+<div jwcid="@Popup" name="uploadPopup" class="c_popup c_popup-half">
+    <div class="c_popupGroup">
+        <div class="c_popupItem c_popupItem-show">
+            <!--
+                多文件上传  Upload组件
+                title : 标题
+                ftpCode : FTP_SITE 配置 相关表参数库  ucr_param.wd_gateway_ftp
+                fileTypes : 允许上传的文件类型，多个文件类型用","号分隔
+                fileSize : 允许上传的文件大小，单位byte, 默认值为30M
+                fileLimit : 允许上传的文件个数，默认10
+                fileDelete : true | false, 移除或清空时是否删除服务器端文件，默认为true
+            -->
+            <div name="fileupload" jwcid="@Upload" title="文件上传" useSwfUpload="false" readonly="false" ftpCode="order" fileSize="1" filePath="attach" fileTypes=".html;.rar;.doc;.docx;.jpg;.png" value="10007134,10006318"></div>
+        </div>
+    </div>
+</div>
+<!-- 弹窗 结束 -->
+
+
+<script language="javascript">
+    //<!--
+    $(function(){
+
+        //$("#simpleupload").attr("disabled", true);
+        //$("#fileupload").attr("disabled", true);
+
+        loadFile();
+    });
+
+    function loadFile(){
+        //fileupload.loadFile('10007134', '10006318');
+        //fileupload.loadFile('10006318');
+    }
+
+    /**
+     已上传文件数据在 参数库 ucr_param.WD_F_FTPFILE表
+     **/
+
+//单文件上传，绑定上传组件afterAction事件
+    $("#simpleupload").afterAction(function(e, file){
+        alert(file.name + "|" + file.fileId);
+    });
+
+    //多文件上传,绑定上传组件确定按钮事件
+    $("#fileupload").select(function(){
+
+        //this.fileSet() 返回已上传文件的json Array对象,如   [{name:name1, id:id1}, {name:name2,id:id2}]
+        //alert( $.DatasetList(this.fileSet()) );
+
+        //this.val() 返回已上传文件的名称和Id对象 {NAME : "name1,name2,name3", ID : "id1,id2,id3"}
+
+        var obj = this.val();
+        alert(obj);
+
+        $("#upfileText").text(obj.NAME);
+        $("#upfileValue").val(obj.ID);
+    });
+
+    //绑定上传组件清除按钮事件
+    $("#fileupload").clear(function(){
+        alert(1);
+
+        $("#upfileText").text("");
+        $("#upfileValue").val("");
+    });
+
+    //-->
+</script>
+</body>
+</html>

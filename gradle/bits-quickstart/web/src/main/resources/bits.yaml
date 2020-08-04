@@ -1,0 +1,98 @@
+filter.sessionVerify:
+  name: sessionVerify
+  servletNames: handler,attach,impexp,quickstart
+  #urlPatterns: /examples/*,/data/*,/quickstart,/handler,/attach,/impexp
+  order: 5
+  enabled: true
+
+#.sql config
+rse:
+  enable: false
+
+project.css: pak
+
+touchframe.pc.login:
+  title: "Quickstart"
+  logoTitle: "Quickstart"
+  usernameField: STAFF_ID
+  usernameValue: SUPERUSER
+  passwordField: PASSWORD
+  passwordValue: lc
+  #loginAction: com.wade.quickstart.view.devframe.action.impl.LoginAction
+  locales:
+    zh_CN: "中文(中华人民共和国)"
+    en_US: "English(United States)"
+  widgets:
+    logo:
+      enabled: true
+    form:
+      enabled: true
+
+touchframe.pc.main:
+  title: "Quickstart"
+  useridField: STAFF_ID
+  usernameField: STAFF_NAME
+  userdeptField: DEPART_NAME
+  widgets:
+    person:
+      enabled: false
+    group:
+      enabled: false
+    favorite:
+      enabled: false
+    reminder:
+      enabled: false
+    tool:
+      enabled: true
+
+touchframe.pc.home:
+  widgets:
+    banner:
+      enabled: true
+    tab-home:
+      enabled: false
+    tab-fullmenu:
+      enabled: true
+
+touchframe.menu:
+  groups: [
+    {
+      name: "开发样例",
+      subgroups: [
+        {
+          name: "业务样例",
+          items: [
+            {name: "基本查询", url: "?service=page/quickstart.page.demo.business.query.SimpleQuery"},
+            {name: "基本受理", url: "?service=page/quickstart.page.demo.business.accept.SimpleAccept"}
+           ]
+        },
+        {
+          name: "基本功能",
+          items: [
+          {name: "文件上传", url: "?service=page/quickstart.page.demo.basic.Upload"},
+          {name: "导入导出", url: "?service=page/quickstart.page.demo.basic.ImpExp"}
+          ]
+        }
+      ]
+    }
+  ]
+
+
+## 开发模式下服务加载的配置
+# develop-service-loader:
+#  ext-packages: ["com.asiainfo.quickstart"]
+
+## 示例配置，KEY里不能带"."号，否则解析报错
+quickstart:
+  demo:
+    simplequery:
+      name: "SUPERUSR"
+      code: "SUPERUSR"
+      age: 10
+      items: [
+        {name: 'name1', value: 1},
+        {name: 'name2', value: 2},
+        {name: 'name3', value: 3}
+      ]
+
+

@@ -1,0 +1,84 @@
+[
+    {
+        "input": {
+            "OFFER_TYPE": "P",
+            "OFFER_NAME": "99元不限量主套餐"
+        },
+        "output": {
+            "data": {
+                "OFFERS": [
+                    {
+                        "OFFER_TYPE": "P",
+                        "OFFER_ID": "90001001",
+                        "OFFER_NAME": "99元不限量主套餐",
+                        "OFFER_CHA": [
+                            {
+                                "CHA_SPEC_ID": "10001",
+                                "ATTR_CODE": "CODE1",
+                                "VALUE": "特征1"
+                            },
+                            {
+                                "CHA_SPEC_ID": "10002",
+                                "ATTR_CODE": "CODE2",
+                                "VALUE": "特征2"
+                            },
+                            {
+                                "CHA_SPEC_ID": "10003",
+                                "ATTR_CODE": "CODE3",
+                                "VALUE": "特征3"
+                            }
+                        ],
+                        "OFFER_PRICE": [
+                            {
+                                "PRICE_ID": "50000001",
+                                "FEE": "9900"
+                            }
+                        ],
+                        "COMP_OFFER": [
+                            {
+                                "OFFER_ID": "50005001",
+                                "OFFER_NAME": "99元不限量资费商品"
+                            },
+                            {
+                                "OFFER_ID": "20000001",
+                                "OFFER_NAME": "语音原子服务商品"
+                            },
+                            {
+                                "OFFER_ID": "20000002",
+                                "OFFER_NAME": "GPRS原子服务商品"
+                            },
+                            {
+                                "OFFER_ID": "20000003",
+                                "OFFER_NAME": "来电显示原子服务商品"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": {
+            "OFFER_TYPE": "D",
+            "OFFER_NAME": "99元不限量资费商品"
+        },
+        "output": {
+            "data": {
+                "OFFERS": [
+                    {
+                        "OFFER_TYPE": "D",
+                        "OFFER_ID": "50005001",
+                        "OFFER_NAME": "99元不限量资费商品",
+                        "OFFER_CHA": [
+                            {
+                                "CHA_SPEC_ID": "10005",
+                                "ATTR_CODE": "CODE5",
+                                "VALUE": "特征5"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+]

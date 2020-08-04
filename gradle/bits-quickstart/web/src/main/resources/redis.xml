@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<redis>
+
+    <default-datacenter>default-datacenter</default-datacenter>
+
+    <datacenter name="default-datacenter">
+
+        <cluster name="sec" desc="权限缓存">
+            <heartbeat-second>5</heartbeat-second>
+            <pool-size>2</pool-size>
+            
+            <address master="127.0.0.1:12001" />
+        </cluster>
+
+		<cluster name="sna" desc="会话缓存">
+            <heartbeat-second>5</heartbeat-second>
+            <pool-size>2</pool-size>
+            
+            <address master="127.0.0.1:13001" />
+        </cluster>
+    </datacenter>
+</redis>

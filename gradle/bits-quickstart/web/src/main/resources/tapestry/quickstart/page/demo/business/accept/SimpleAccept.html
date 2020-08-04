@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head jwcid="@Head">
+    <title>基本受理</title>
+</head>
+<body jwcid="@Body">
+
+<div class="l_edit">
+
+    <!-- 主流程 开始 -->
+    <div id="formCond" class="l_editMain">
+
+        <div class="c_space"></div>
+        <div class="c_list c_list-form">
+            <ul>
+                <li class="link" ontap="showPopup('mypop', 'chooseNumItem', true)">
+                    <div class="label">选择号码</div>
+                    <div class="value">
+                        <input type="text" id="NUMBER" name="NUMBER" value="" nullable="no" desc="号码" />
+                    </div>
+                    <div class="more"></div>
+                </li>
+                <li>
+                    <div class="label">姓名</div>
+                    <div class="value"><input type="text" name="NAME" value="佘小在" nullable="no" desc="姓名" /></div>
+                </li>
+                <li class="link">
+                    <div class="label">性别</div>
+                    <div class="value">
+                        <div name="SEX" jwcid="@Switch" onText="女" offText="男" onColor="red" offColor="blue" value="off"></div>
+                    </div>
+                </li>
+                <li class="link">
+                    <div class="label">星级</div>
+                    <div class="value">
+                        <span jwcid="@Star" name="STAR_LEVEL" />
+                    </div>
+                </li>
+                <li class="link">
+                    <div class="label">数量</div>
+                    <div class="value">
+                        <div name="FOOD_NUM" jwcid="@IncreaseReduce" style="width:2rem;" value="0" step="100" nullable="no" desc="数量"></div>
+                    </div>
+                </li>
+                <li class="link">
+                    <div class="label">金额</div>
+                    <div class="value">
+                        <input name="MONEY" jwcid="@MoneyField" desc="金额" nullable="no" />
+                    </div>
+                </li>
+                <li class="link" ontap="showPopup('mypop', 'chooseBirthday', true);$('#mydate').val(this.value)">
+                    <div class="label">生日</div>
+                    <div class="value"><input name="BIRTHDAY" jwcid="@DateField" value="" /></div>
+                    <div class="more"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="c_space"></div>
+        <div class="c_list c_list-border">
+            <ul>
+                <li class="link" ontap="showPopup('mypop', 'choosePackagePage', true)">
+                    <div class="main">选择套餐</div>
+                    <div class="value"><input id="PACKAGE" name="PACKAGE" type="text" value="" desc="套餐" nullable="no" /></div>
+                    <div class="more"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="c_space"></div>
+        <div class="c_submit c_submit-full">
+            <button class="e_button-l e_button-r e_button-navy" type="button" ontap="resetArea('formCond')">重置</button>
+            <button class="e_button-l e_button-r e_button-green" type="button" ontap="submitForm()">提交</button>
+        </div>
+        <div class="c_space"></div>
+    </div>
+    <!-- 主流程 结束 -->
+
+    <!-- 占位符 开始 -->
+    <div class="l_editPlace"><span class="e_ico-cmlogo"></span></div>
+    <!-- 占位符 结束 -->
+</div>
+
+
+<!-- 弹出组件 开始 -->
+<div jwcid="@Popup" name="mypop" class="c_popup c_popup-half" mask="false" >
+
+    <div class="c_popupGroup">
+
+        <!-- 选择号码 -->
+        <div class="c_popupItem" id="chooseNumItem">
+            <div class="c_header">
+                <div class="back" ontap="hidePopup(this)">选择号码</div>
+            </div>
+            <!-- 滚动 开始 -->
+            <div class="c_scroll c_scroll-float c_scroll-header c_scroll-page" id="chooseNumScroll">
+                <div class="c_scrollContent">
+                    <!-- 筛选 开始 -->
+                    <div class="c_filter">
+                        <ul>
+                            <li>
+                                <div class="label">号段：</div>
+                                <div class="option">
+                                    <ul>
+                                        <li>不限</li>
+                                        <li>134</li>
+                                        <li>135</li>
+                                        <li>136</li>
+                                        <li class="on">137</li>
+                                        <li>138</li>
+                                        <li>139</li>
+                                        <li>147</li>
+                                        <li>150</li>
+                                        <li>151</li>
+                                        <li>152</li>
+                                        <li>157</li>
+                                        <li>158</li>
+                                        <li>159</li>
+                                        <li>182</li>
+                                        <li>183</li>
+                                        <li>187</li>
+                                        <li>188</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">规则：</div>
+                                <div class="option">
+                                    <ul>
+                                        <li class="on">不限</li>
+                                        <li>AAAA</li>
+                                        <li>AABB</li>
+                                        <li>ABAB</li>
+                                        <li>ABCD</li>
+                                        <li>AAA</li>
+                                        <li>ABC</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 筛选 结束 -->
+                    <div class="c_line"></div>
+                    <!-- 列表 开始 -->
+                    <div class="c_list c_list-line c_list-col-3">
+                        <ul id="chooseNumList">
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">13474132424</div>
+                                    <div class="content">需预存：<span class="e_red">￥400</span></div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- 列表 结束 -->
+                </div>
+            </div>
+            <!-- 滚动 结束 -->
+        </div>
+        <!-- 选择号码 结束 -->
+
+        <!-- 选择套餐 开始 -->
+        <div class="c_popupItem" id="choosePackagePage">
+            <div class="c_header">
+                <div class="back" ontap="hidePopup(this)">选择套餐</div>
+                <div class="fn">
+                    <div class="e_search" style="width:2rem;">
+                        <div class="e_searchInput"><input type="text" placeholder="品牌/名称" /></div>
+                        <div class="e_searchButton"><button type="button"><span class="e_ico-search"></span></button></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 滚动 开始 -->
+            <div class="c_scroll c_scroll-float c_scroll-header c_scroll-page" id="choosePackageScroll">
+                <div class="c_scrollContent">
+                    <!-- 筛选 开始 -->
+                    <div class="c_filter">
+                        <ul>
+                            <li>
+                                <div class="label">品牌：</div>
+                                <div class="option">
+                                    <ul>
+                                        <li>不限</li>
+                                        <li class="on">全球通</li>
+                                        <li>神州行</li>
+                                        <li>动感地带</li>
+                                        <li>本地通</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">价格：</div>
+                                <div class="option">
+                                    <ul>
+                                        <li class="on">不限</li>
+                                        <li>0-50</li>
+                                        <li>50-100</li>
+                                        <li>100-200</li>
+                                        <li>200-500</li>
+                                        <li>500以上</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">系列：</div>
+                                <div class="option">
+                                    <ul>
+                                        <li class="on">不限</li>
+                                        <li>畅聊系列</li>
+                                        <li>商旅系列</li>
+                                        <li>冲浪系列</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 筛选 结束 -->
+                    <div class="c_line"></div>
+                    <!-- 列表 开始 -->
+                    <div class="c_list c_list-line">
+                        <ul id="choosePackageList">
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">商旅88系列套餐</div>
+                                    <div class="content">
+                                        语音平均 0.26 元/分钟，流量平均 0.04 元/M，每月赠送 300 条短信<br />
+                                        送来电显示、来电提醒、国内漫游<br />
+                                        288 以上套餐赠送呼叫转移、彩铃
+                                    </div>
+                                </div>
+                                <div class="side"><div class="e_tag e_tag-green">新品</div></div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">飞享88系列套餐</div>
+                                    <div class="content">
+                                        4G飞享套餐由4G自选套餐固定组合而成<br />
+                                        超出套餐后流量0.29元/M，语音0.19元/分钟，短信0.1元/条
+                                    </div>
+                                </div>
+                                <div class="side"><div class="e_tag e_tag-orange">热门</div></div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">神州行9元流量卡</div>
+                                    <div class="content">
+                                        月保底消费9元，套餐内省内包含通用流量100M，本地被叫免费<br />
+                                        套餐外本地主叫本地0.1元/分钟，本地主叫国内0.2元/分钟，省内漫游主叫<br />
+                                        国内0.3元/分钟，省内漫游被叫0.3元/分钟，省外漫游主叫国内0.3元/分钟，<br />
+                                        省外漫游被叫0.3元/分钟，数据流量0.29元/M<br />
+                                    </div>
+                                </div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">神州行长途套餐18元套餐</div>
+                                    <div class="content">
+                                        长途1.9毛，本地接听免费，月使用费18元<br />
+                                        套餐外，本地主叫国内0.19元/分钟；其他资费按标准资费执行<br />
+                                    </div>
+                                </div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">商旅88系列套餐</div>
+                                    <div class="content">
+                                        语音平均 0.26 元/分钟，流量平均 0.04 元/M，每月赠送 300 条短信<br />
+                                        送来电显示、来电提醒、国内漫游<br />
+                                        288 以上套餐赠送呼叫转移、彩铃
+                                    </div>
+                                </div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">飞享88系列套餐</div>
+                                    <div class="content">
+                                        4G飞享套餐由4G自选套餐固定组合而成<br />
+                                        超出套餐后流量0.29元/M，语音0.19元/分钟，短信0.1元/条
+                                    </div>
+                                </div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">神州行9元流量卡</div>
+                                    <div class="content">
+                                        月保底消费9元，套餐内省内包含通用流量100M，本地被叫免费<br />
+                                        套餐外本地主叫本地0.1元/分钟，本地主叫国内0.2元/分钟，省内漫游主叫<br />
+                                        国内0.3元/分钟，省内漫游被叫0.3元/分钟，省外漫游主叫国内0.3元/分钟，<br />
+                                        省外漫游被叫0.3元/分钟，数据流量0.29元/M<br />
+                                    </div>
+                                </div>
+                                <div class="more"></div>
+                            </li>
+                            <li class="link">
+                                <div class="main">
+                                    <div class="title">神州行长途套餐18元套餐</div>
+                                    <div class="content">
+                                        长途1.9毛，本地接听免费，月使用费18元<br />
+                                        套餐外，本地主叫国内0.19元/分钟；其他资费按标准资费执行<br />
+                                    </div>
+                                </div>
+                                <div class="more"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 列表 结束 -->
+                </div>
+            </div>
+            <!-- 滚动 结束 -->
+        </div>
+        <!-- 选择套餐结束 -->
+
+        <!-- 选择日期  开始 -->
+        <div class="c_popupItem" id="chooseBirthday">
+            <div class="c_header">
+                <div class="back" onclick="hidePopup(this)">选择生日</div>
+            </div>
+            <div class="l_float l_float-float l_float-header">
+                <div name="mydate" jwcid="@Calendar" ></div>
+            </div>
+        </div>
+        <!-- 选择日期 结束 -->
+
+    </div>
+
+</div>
+<!-- 弹出组件 结束 -->
+
+<script jwcid="@Script" src="quickstart/scripts/page/demo/business/accept/SimpleAccept.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+	"data_0":{
+	    "busiCode": null,
+	    "opId": null,
+	    "phone": null,
+	    "returnCode": "0",
+	    "returnMessage": "null",
+	    "bean": {
+	        "chnlManager": "",
+	        "distributorName": "杭州西湖留下区域营销中心",
+	        "managerPhone": "",
+	        "distributorTown": "571",
+	        "distributorCity": "5711",
+	        "distributorCode": "10242888",
+	        "defaultValue": "54",
+	        "defaultValue_2": "55",
+	        "defaultValue_3": "56"
+	    },
+	    "beans": [
+	        {
+	            "phone": "13603789997",
+	            "consignee": "钟月华",
+	            "invoice": "杭州西湖留下区域营销中心1",
+	            "postCode": "310016",
+	            "needVotes": "1",
+	            "code": "5553",
+	            "notes": "测试",
+	            "deliveryAddress": "杭州西湖留下区域营销中心",
+	            "distributorCode": "10242888"
+	        }
+	    ]
+	}
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+    <sheet desc="开发任务导出">
+        <header isshow="true" height="300">
+            <cell
+                    name="TASK_MODULE_ID"
+                    desc="模块"
+                    type="1"
+                    nullable="no"
+                    align="1"
+                    width="5000"
+            />
+            <cell
+                    name="TASK_NAME"
+                    desc="任务名称"
+                    type="1"
+                    nullable="no"
+                    align="1"
+                    width="10000"
+            />
+            <cell
+                    name="FUNC_CODE"
+                    desc="功能编号"
+                    type="1"
+                    nullable="no"
+                    align="1"
+                    width="5000"
+            />
+            <cell
+                    name="DEV_STAFF_ID"
+                    desc="责任人"
+                    type="1"
+                    nullable="no"
+                    align="1"
+                    width="5000"
+            />
+            <cell
+                    name="DEV_START_TIME"
+                    desc="开始时间"
+                    type="3"
+                    nullable="no"
+                    format="yyyy-MM-dd"
+                    align="1"
+                    width="5000"
+            />
+            <cell
+                    name="DEV_END_TIME"
+                    desc="完成时间"
+                    type="3"
+                    nullable="no"
+                    format="yyyy-MM-dd"
+                    align="1"
+                    width="5000"
+            />
+            <cell
+                    name="DEV_DESC"
+                    desc="备注"
+                    type="1"
+                    align="1"
+                    width="5000"
+            />
+        </header>
+    </sheet>
+</workbook>

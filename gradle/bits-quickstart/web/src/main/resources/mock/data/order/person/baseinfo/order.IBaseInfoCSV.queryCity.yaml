@@ -1,0 +1,59 @@
+[
+{
+"input": {
+	        "KEY": "0755",
+			"NAME":"深圳1"
+	    },
+"output": {
+	
+	"data" : 
+		{
+		"eles" : 
+			[
+				{
+					"KEY":"0755",
+					"NAME":"深圳",
+					"DATA":[
+						{"KEY":1,"VALUE":"选项1"},
+						{"KEY":2,"VALUE":"选项2"},
+						{"KEY":3,"VALUE":"选项3"},
+						{"KEY":4,"VALUE":"选项4"}
+					],
+					"EVENT_FUNCTION":[
+						{"KEY":"","VALUE":""}
+					]
+				}
+			]
+		}
+}	
+},
+
+{
+"input": {
+	        "KEY": "020",
+			"NAME":"广州"
+	    },
+"output": {
+	
+	"data" : 
+		{
+		"eles" : 
+			[
+				{
+					"KEY":"020",
+					"NAME":"广州",
+					"DATA":[
+						{"KEY":1,"VALUE":"选项1"},
+						{"KEY":2,"VALUE":"选项2"},
+						{"KEY":3,"VALUE":"选项3"},
+						{"KEY":4,"VALUE":"选项4"}
+					],
+					"EVENT_FUNCTION":[
+						{"KEY":"","VALUE":""}
+					]
+				}
+			]
+		}
+}	
+}
+]

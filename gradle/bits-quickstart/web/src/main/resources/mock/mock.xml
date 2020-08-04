@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mockCfg>
+    <!-- mock模式是否开启，true是 flase 否-->
+    <mockMode value="true"/>
+
+    <!--需要mock的服务分组-->
+    <serviceGroup value="order">
+		<service value="order.IOrder.changeStatus"/>
+		<service value="order.IOfferQueryCSV.queryUmOfferBySubIdAndOfferType"/>
+    </serviceGroup>
+
+    <serviceGroup value="cust">
+        <service value="cust.IQueryPartyCSV.queryPartyByPartyId"/>
+    </serviceGroup>
+    
+
+</mockCfg>

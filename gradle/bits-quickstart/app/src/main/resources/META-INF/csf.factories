@@ -1,0 +1,5 @@
+#csf服务实例获取模块，数字越大优先级越高
+com.asiainfo.bits.aif.csf.module.fetcher.BitsInstanceServiceFetcher=3
+
+#csf默认服务发现模块，优先级=0
+com.ai.aif.csf.module.discover.CsfInvokerDiscover=3

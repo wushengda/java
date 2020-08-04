@@ -1,0 +1,54 @@
+buildscript{
+    ext {
+        bitsVersion = "1.0.0-SNAPSHOT"
+        wadeVersion = "5.5.0-SNAPSHOT"
+        springVersion = "2.0.7.RELEASE"
+        localRepositoryDir = "${rootDir}/../library"
+    }
+}
+
+
+
+group 'com.asiainfo.bits'
+version "1.0.0-SNAPSHOT"
+
+subprojects {
+
+    //引入插件
+    apply plugin:'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    /**
+     * 构建时跳过test
+     */
+    check.dependsOn.remove(test)
+
+    //公共依赖
+    dependencies {
+        compile fileTree(dir:"${localRepositoryDir}/extlib",include:['*.jar'])
+        compile fileTree(dir:"${localRepositoryDir}/apache",include:['*.jar'])
+        compile fileTree(dir:"${localRepositoryDir}/appframe",include:['*.jar'])
+        compile fileTree(dir:"${localRepositoryDir}/bits",include:['*.jar'])
+        compile fileTree(dir:"${localRepositoryDir}/csf",include:['*.jar'])
+        compile fileTree(dir:"${localRepositoryDir}/spring",include:['*.jar'])
+        compile fileTree(dir:"${localRepositoryDir}/wade",include:['*.jar'])
+    }
+}
+
+task copyFile(type: Copy){
+    from "${rootDir}/**/build/libs"
+    into "C:\\Users\\WUSD\\Desktop"
+    include "*.jar"
+}

@@ -1,0 +1,7 @@
+simplequery:
+  name: "bits Quickstart"
+  code: "bits Quickstart"
+  age: "12"
+
+rse:
+  enable: false

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AIConfig>
+
+    <ConfigKind name="AppFrameInit">
+        <ConfigItem name="CHARSET" remarks="字符集">UTF-8</ConfigItem>
+        <ConfigItem name="IdGeneratorClass" remarks="数据对象唯一标识管理器实现类">
+            com.ai.appframe2.complex.tab.id.AdvanceIdGeneratorImpl
+        </ConfigItem>
+        <ConfigItem name="DataStoreClass" remarks="数据存储管理器实现类">com.ai.appframe2.complex.tab.store.AdvanceDataStoreImpl</ConfigItem>
+        <ConfigItem name="HostIPPrefix" remarks="为了获取主机的有些IP地址，需要根据前缀获得有些IP,例如10.9"></ConfigItem>
+        <ConfigItem name="ENHANCE_PACKAGE" remarks="需要增强的包">demo</ConfigItem>
+        <ConfigItem name="AuthTimeOut" remarks="SSO认证超时时间(秒)">1800</ConfigItem>
+        <ConfigItem name="AuthRefreshTime" remarks="SSO认证刷新时间(秒)">120</ConfigItem>
+        <ConfigItem name="UserManagerClass" remarks="用户登陆的实现类">com.ai.appframe2.complex.secframe.CenterUserManagerImpl
+        </ConfigItem>
+    </ConfigKind>
+
+    <ConfigKind name="IS_SO_ENABLE_WORKFLOW" remarks="业务受理是否启动工作流">
+        <ConfigItem name="IS_SO_ENABLE_WORKFLOW" remarks="业务受理是否启动工作流">N</ConfigItem>
+    </ConfigKind>
+
+    <ConfigKind name="UNCHECK_URL" remarks="不进行验证的url(包括session和访问权限)">
+    </ConfigKind>
+    <ConfigKind name="QboQueryFrame" remarks="联合查询数据库操作配置">
+        <ConfigItem name="LocalQboDataBaseOperClass" remarks="联合查询数据库操作实现类">
+            com.asiainfo.busiframe.unionselect.factory.impl.LocalDataBaseOperFactoryImpl
+        </ConfigItem>
+    </ConfigKind>
+    <ConfigKind name="AppFrame55" remarks="AppFrame55配置">
+        <ConfigItem name="ILLEGAL_CHAR_CHECK" remarks="非法字符校验">document.cookie|href|script|select
+            |select/|select\(|select\*|insert |insert/|insert\(|insert\*|update |update/|update\(|update\*|delete
+            |delete/|delete\(|delete\*|truncate |truncate/|truncate\(|truncate\*|exec |exec/|exec\(|exec\*|drop
+            |drop/|drop\(|drop\*
+        </ConfigItem>
+        <ConfigItem name="CPU_TIME_SUPPORT" remarks="cpu时间是否支持(如果没有,系统支持就使用,系统不支持就不使用)">false</ConfigItem>
+        <ConfigItem name="CACHE_READONLY" remarks="CacheFactory返回只读的map(如果没有,返回只读Map)">true</ConfigItem>
+        <ConfigItem name="DATABASE_DIALECT" remarks="数据的方言(如果没有,采用OracleDialectImpl)">
+            com.ai.appframe2.bo.dialect.OracleDialectImpl
+        </ConfigItem>
+        <ConfigItem name="READ_SET_BY_INPUTSTREAM" remarks="读取SET文件采用InputStream方式(默认采用InputStreamReader)">false
+        </ConfigItem>
+
+        <!--<ConfigItem name="SRVLOG_IMPL_CLASS" remarks="服务日志实现类(如果没有,不进行服务日志处理)" >com.ai.appframe2.complex.mbean.standard.sv.log.DefaultSrvLogImpl</ConfigItem>-->
+        <ConfigItem name="SRVCONTROL_IMPL_CLASS" remarks="服务控制实现类(如果没有,不进行服务控制处理)">
+            com.ai.appframe2.complex.service.control.DefaultSrvControlImpl
+        </ConfigItem>
+
+        <ConfigItem name="CENTER_REGION_IMPL_CLASS" remarks="CenterRegion实现类(如果没有,采用DefaultCenterRegionImpl)">
+            com.ai.appframe2.complex.tab.store.DefaultCenterRegionImpl
+        </ConfigItem>
+        <ConfigItem name="BD_CHECK_IMPL_CLASS" remarks="ICheck实现类(如果没有,采用DefaultCheckImpl)">
+            com.ai.appframe2.complex.service.impl.client.check.DefaultCheckImpl
+        </ConfigItem>
+
+        <ConfigItem name="METHOD_CENTER_IMPL_CLASS" remarks="方法中心设置实现类(如果没有,不进行方法中心处理)">
+            <!--com.ai.appframe2.complex.center.mc.DefaultMethodCenterImpl-->
+        </ConfigItem>
+        <ConfigItem name="METHOD_CENTER_TYPE" remarks="方法中心类型(LOCAL本地方式,SERVER服务器方式)">LOCAL</ConfigItem>
+        <ConfigItem name="SAVE_IN_EXT_PROPS" remarks="操作员Id、组织Id是否保存在UserInfoInterface的扩展属性中(true/false)">true
+        </ConfigItem>
+    </ConfigKind>
+
+    <ConfigKind name="AppFrameJdbc" remarks="jdbc属性设置">
+        <ConfigItem name="appframe.jdbc.resultset_level" remarks="0:保持原有(最安全),1:安全的使用ResultSet,2:直接返回ResultSet">2
+        </ConfigItem>
+        <ConfigItem name="appframe.jdbc.use.rowid" remarks="0:不使用rowid,1:使用rowid.(现在仅仅oracle方言支持rowid)">1</ConfigItem>
+        <ConfigItem name="appframe.jdbc.check_resultset" remarks="0:不检查返回结果集,1:检查返回结果集">1</ConfigItem>
+        <ConfigItem name="appframe.jdbc.check_resultset.warning_count" remarks="告警数量">100000</ConfigItem>
+        <ConfigItem name="appframe.jdbc.check_resultset.error_count" remarks="错误数量">300000</ConfigItem>
+        <ConfigItem name="appframe.bo.mask" remarks="bo数据是否需要模糊化(1,代表需要模糊化 0,代表不需要模糊化.不配置代表不需要模糊化)">1</ConfigItem>
+
+    </ConfigKind>
+
+    <ConfigKind name="AppFrameLocale" remarks="语言属性设置">
+        <ConfigItem name="LOCALE" remarks="国际化">zh_CN</ConfigItem>
+        <ConfigItem name="LOCALE_FIXED" remarks="固定国际化(不采用web或客户端传入的语言)">true</ConfigItem>
+        <!--<ConfigItem name="CUSTOM_LOCALE_RESOURCE_IMPL_CLASS"
+                    remarks="自定义的语言资源实现类(appframe内部采用的是AppframeLocaleFactory获取资源文件的方式,可以采用自定义的方式提高扩展能力)">
+            com.ai.common.i18n.CrmLocaleResourceImpl
+        </ConfigItem>-->
+    </ConfigKind>
+
+    <ConfigKind name="CsfClientConfig" remarks="语言属性设置">
+        <ConfigItem name="CLIENT_SERVICE_INVOKE_CLASS" remarks="通过CSF方式调用中心服务">com.ai.aif.csf.client.service.factory.impl.CsfClientServiceInvoke</ConfigItem>
+        <!--<ConfigItem name="CLIENT_SERVICE_INVOKE_CLASS" remarks="通过能力开放平台调用中心服务">com.ai.aif.csf.client.service.factory.impl.EsbClientServiceInvoke</ConfigItem>-->
+    </ConfigKind>
+</AIConfig>

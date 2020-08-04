@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+
+<html size="s">
+<head jwcid="@Head">
+    <title>ImpExp</title>
+    <script type="text/javascript">
+        //<!--
+        //$.PLUGIN_SWFUPLAOD_ENABLE = false;
+        //-->
+    </script>
+</head>
+<body jwcid="@Body">
+
+<div class="l_edit">
+
+    <div class="l_editMain">
+
+        <div class="c_space"></div>
+
+        <div id="queryCond" class="c_list c_list-form">
+            <ul>
+                <li class="link">
+                    <div class="label">号码</div>
+                    <div class="value">
+                        <input name="SERIAL_NUMBER" type="text" value="138000000" />
+                    </div>
+                    <div class="more"></div>
+                </li>
+                <li>
+                    <div class="label">姓名</div>
+                    <div class="value"><input name="NAME" type="text" value="佘小在" /></div>
+                </li>
+                <li>
+                    <div class="label">导入</div>
+                    <div class="value">
+                        <span name="simpleImport" jwcid="@SimpleImport" useSwfUpload="false" pushMode="false" auto="true" cond="queryCond" taskId="999999999" configFile="import/quickstart/testimpt.xml" templateFile="ognl:'quickstart/template/' + urlEncode('测试导入模板') + '.xls'" ftpCode="order" />
+                    </div>
+                </li>
+                <li>
+                    <div class="label">导出</div>
+                    <div class="value">
+                        <span name="simpleExport" jwcid="@SimpleExport" pushMode="false" cond="queryCond" taskId="999999998" fileName="开发任务.xls" configFile="export/quickstart/testexpt.xml" ftpCode="order" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="c_title">
+            <div class="text">导入</div>
+        </div>
+
+        <button name="myImport" buttonText="任务导入" auto="true" useSwfUpload="false" cond="queryCond" pushMode="false" params="&ARG1=111" taskId="999999999" jwcid="@Import" configFile="import/quickstart/testimpt.xml"  templateFile="ognl:'quickstart/template/' + urlEncode('测试导入模板') + '.xls'" ftpCode="order" ></button>
+
+        <div class="c_space"></div>
+        <div class="c_title">
+            <div class="text">导出</div>
+        </div>
+
+
+        <button name="myExport" cond="queryCond" taskId="999999998" jwcid="@Export" pushMode="false" fileName="开发任务.xls" configFile="export/quickstart/testexpt.xml" ftpCode="order"></button>
+
+        <div class="c_space"></div>
+    </div>
+    <!-- 主流程 结束 -->
+
+    <!-- 占位符 开始 -->
+    <div class="l_editPlace"><span class="e_ico-cmlogo"></span></div>
+    <!-- 占位符 结束 -->
+</div>
+
+<script language="javascript">
+    //<!--
+    /*
+    if($.RPC){
+        $.RPC.DEBUG = true;
+    }
+    */
+
+    $("#simpleImport").beforeAction(function(e){
+        return confirm('是否导入?');
+    });
+
+    $("#myImport").beforeAction(function(e){
+        return confirm('是否导入?');
+    });
+
+    $("#myImport").afterAction(function(e, status){
+        alert(status);
+    });
+
+    $("#myExport").beforeAction(function(e){
+        return confirm('是否导出?');
+    });
+
+    $("#myExport").afterAction(function(e, status){
+        alert(status);
+    });
+
+    $(function(){
+
+        //$("#simpleImport").attr("disabled", true);
+        //$("#simpleExport").attr("disabled", true);
+
+
+        //$("#myImport").attr("disabled", true);
+
+        //$("#myExport").attr("disabled", true);
+
+        /*
+        setTimeout(function(){
+
+        }, 3000);
+        */
+    });
+    //-->
+</script>
+</body>
+</html>

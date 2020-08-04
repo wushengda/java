@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head jwcid="@Head">
+    <title>基本查询</title>
+</head>
+<body jwcid="@Body">
+
+<div class="l_query">
+
+    <div id="queryCond" class="l_queryFn">
+        <!-- 功能 开始 -->
+        <div class="c_fn">
+            <div class="left">
+                <button type="button"><span class="e_ico-add"></span><span>新增</span></button>
+                <button type="button"><span class="e_ico-import"></span><span>导入</span></button>
+            </div>
+            <div class="right">
+                <div class="e_mix" >
+                    <span jwcid="@Select"
+                          name="CODE_TYPE"
+                          source="ognl:@com.asiainfo.bits.staticparam.StaticUtil@getStaticList('DEMO_QUERY_SELECT')"
+                          addDefault="true"
+                          defaultText="查询条件"
+                          nullable="no"
+                          desc="查询条件"
+                          class="e_select e_select-r"
+                    ></span>
+
+                    <button class="e_button-blue" type="button" ontap="queryList()"><span class="e_ico-search"></span></button>
+                </div>
+            </div>
+        </div>
+        <!-- 功能 结束 -->
+    </div>
+
+    <div id="queryPart" jwcid="@Part">
+        <div class="l_queryResult">
+            <table name="mytable" class="c_table" jwcid="@Table">
+                <thead>
+                <tr>
+                    <th col="MY_COL_NAME">CODE_TYPE</th>
+                    <th>CODE_VALUE</th>
+                    <th>CODE_NAME</th>
+                    <th>STATE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr jwcid="@Foreach" source="ognl:infos" value="ognl:info" element="tr">
+                    <td data-title="CODE_TYPE" class="key"><span jwcid="@Insert" value="ognl:info.CODE_TYPE" /></td>
+                    <td data-title="CODE_VALUE"><span jwcid="@Insert" value="ognl:info.CODE_VALUE" /></td>
+                    <td data-title="CODE_NAME"><span jwcid="@Insert" value="ognl:info.CODE_NAME" /></td>
+                    <td data-title="STATE"><span jwcid="@Insert" value="ognl:info.STATE" /></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="l_queryPage">
+            <div name="navbar" jwcid="@NavBar" cond="queryCond" count="ognl:infoCount" listener="queryList" part="queryPart" pageSize="5" needCount="true"></div>
+        </div>
+
+    </div>
+</div>
+
+<script jwcid="@Script" src="quickstart/scripts/page/demo/business/query/SimpleQuery.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+
+<memcache>
+
+    <default-datacenter>center1</default-datacenter>
+
+    <datacenter name="center1" >
+        <cluster name="rse">
+            <address master="10.13.3.16:11201" slave="10.13.3.16:11211" />
+        </cluster>
+    </datacenter>
+
+</memcache>
